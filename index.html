@@ -3,222 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOMBASA WATER CONNECTION REGISTRATION FORM</title>
+    <title>Voter Registration Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('Water.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-        }  
-
-    
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background-color:transparent;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('Flag.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 620px;
+            width: 100%;
+            margin: 40px auto;
+            background-color: rgba(0, 128, 0, 0.08);
+            padding: 25px;
+
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(8px);
+            color: whitesmoke;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .header h1 {
             margin: 0;
-            color: wheat
-            ;
+            font-size: 2rem;
+            color: #2bcf15;
         }
         .header p {
-            color: wheat;
+            margin: 10px 0 0;
+            color: #ec370a;
         }
         .badge {
             display: inline-block;
             padding: 5px 10px;
-            background-color: #007BFF;
+            background-color: #000000;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 999px;
             font-size: 12px;
-            margin-top: 10px;
+            margin-top: 12px;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            color:whitesmoke;
+            margin-bottom: 6px;
+            color: #eaeaea;
+            font-weight: 600;
         }
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px 12px;
+            border: 1px solid rgba(95, 64, 64, 0.22);
+            border-radius: 8px;
+            background-color: rgba(240, 186, 186, 0.12);
+            color: #6f7691;
             box-sizing: border-box;
         }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .radio-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .radio-buttons label {
+            margin: 0;
+            font-weight: 500;
+            color: #f5f6fa;
+        }
         .submit-btn {
-            background-color: linear-gradient(0deg, rgba(0,40,85,0.8), rgba(0,40,85,1)),
+            background: linear-gradient(0deg, rgba(0,128,0,0.8), rgba(0,128,0,1)),
             url('https://images.unsplash.com/photo-1619634457647-85b44b38d3f3?q=80&w=2070') 
             no-repeat center center;
             
-            color:black;
+            color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 12px 20px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            font-size: 16px;
+            font-weight: 600;
         }
         .submit-btn:hover {
-            background-color: #218838;
+            background: linear-gradient(0deg, rgba(0,100,0,0.9), rgba(0,100,0,1)),
+            url('https://images.unsplash.com/photo-1619634457647-85b44b38d3f3?q=80&w=2070') 
+            no-repeat center center;
+            transform: translateY(-2px);
         }
-        @media  screen and(max-width:768px) {
-            .form-container {
-                width: 90%;
-                max-width: 90%;
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 20px auto;
                 padding: 20px;
-            
+            }
+            .header h1 {
+                font-size: 1.75rem;
+            }
         }
-        .form-header {
-            font-size: 24px;
-        }
-        .submit-btn {
-            padding: 12px 20px;
-            font-size: 16px;
-        }
-        .radio-group, .checkbox-group {
-            gap: 10px;
-            flex-direction: column;
-        }
-        body{
-            padding: 15px;
-        }
-    }
-            
-        </style>
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>MOMBASA WATER CONNECTION REGISTRATION</h1>
-            <p>Please fill out the form below to register for a new water connection.</p>
-            <span class="badge">Mombasa County Only</span>
+            <h1>Voter Registration Form</h1>
+            <p>Complete the form below to register for voter identification.</p>
+            <span class="badge">Voter Registration Form</span>
         </div>
-        <form action="/submit_registration" method="POST">
+        <form action="/submit_voter_registration" method="POST">
             <div class="form-group">
-                <label for="fullName">Full Name:</label>
+                <label for="fullName">Full Name</label>
                 <input type="text" id="fullName" name="fullName" required>
             </div>
             <div class="form-group">
-                <label for="gender">Gender</label>
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
                 <div class="radio-buttons">
-                    <input type="radio" id="male" name="gender" value="male" required>
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female" required>
-                    <label for="female">Female</label>
-                    <input type="radio" id="other" name="gender" value="other" required>
-                    <label for="other">Other</label>
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="other" required> Other</label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="idNumber">ID Number:</label>
+                <label for="photoid">Upload Your National ID</label>
+                <input type="file" id="photoid" name="photoid" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="idNumber">National ID Number</label>
                 <input type="text" id="idNumber" name="idNumber" required>
-                </div>
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="text" id="phoneNumber" name="phoneNumber" required>
-            </div>
-        <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="sub-county">Sub-County:</label>
-                <select id="sub-county" name="subCounty" required>
-                    <option value="">Select Sub-County</option>
+                <label for="voterCard">Voter Card Number</label>
+                <input type="text" id="voterCard" name="voterCard">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="county">County</label>
+                <input type="hidden" id="county" name="county" value="Mombasa">
+                <p style="color: #f5f6fa; font-weight: 600;">Mombasa County</p>
+            </div>
+            <div class="form-group">
+                <label for="constituency">Constituency</label>
+                <select id="constituency" name="constituency" required>
+                    <option value="">Select Constituency</option>
+                    <option value="changamwe">Changamwe</option>
+                    <option value="jomvu">Jomvu</option>
+                    <option value="kisauni">Kisauni</option>
                     <option value="likoni">Likoni</option>
                     <option value="mvita">Mvita</option>
                     <option value="nyali">Nyali</option>
-                    <option value="kisauni">Kisauni</option>
-                    <option value="changamwe">Changamwe</option>
-                    <option value="jomvu">Jomvu</option>
-                    </select>
-                </div>
+                </select>
+            </div>
             <div class="form-group">
-                <label for="ward">Ward:</label>
+                <label for="ward">Ward</label>
                 <select id="ward" name="ward" required>
                     <option value="">Select Ward</option>
-                    <optgroup label="Likoni">
-                        <option value="shikaadabu">Shika Adabu</option>
-                        <option value="mtongwe">Mtongwe</option>
-                        <option value="bofu">Bofu</option>
-                        <option value="likoni">Likoni</option>
-                        <option value="timbwani">Timbwani</option>
-                    </optgroup>
-                    <optgroup label="Mvita">
-                        <option value="makadara">Makadara</option>
-                    <option value="tononoka">Tononoka</option>
-                    <option value="majengo">Majengo</option>
-                    <option value="shimanzi">Shimanzi</option>
-                    <option value="tudor">Tudor</option>
-                </optgroup>
-
-                <optgroup label="Nyali">
-                    <option value="kongowea">Kongowea</option>
-                    <option value="kadzandani">Kadzandani</option>
-                    <option value="frere-town">Frere Town</option>
-                    <option value="ziwa-la-ngombe">Ziwa La Ngombe</option>
-                    <option value="mkomani">Mkomani</option>
-
-                </optgroup>
-                <optgroup label="Kisauni">
-                    <option value="junda">Junda</option>
-                    <option value="magogoni">Magogoni</option>
-                    <option value="mwakirunge">Mwakirunge</option>
-                    <option value="shanzu">Shanzu</option>
-                    <option value="kisauni">Kisauni</option>
-                    <option value="mtopanga">Mtopanga</option>
-                    <option value="bamburi">Bamburi</option>
-                </optgroup>
-                <optgroup label="Changamwe">
                     <option value="airport">Airport</option>
                     <option value="chaani">Chaani</option>
                     <option value="changamwe">Changamwe</option>
                     <option value="port-reitz">Port Reitz</option>
-                    <option value="kipevu">Kipevu</option>
-                </optgroup>
-                <optgroup label="Jomvu">
                     <option value="jomvu-kuu">Jomvu Kuu</option>
-                    <option value="mikindanu">Mikindanu</option>
-                    <option value="miritini">Miritini</option>
-                </optgroup>
+                    <option value="mikindani">Mikindani</option>
+                    <option value="bamburi">Bamburi</option>
+                    <option value="junda">Junda</option>
+                    <option value="majengo">Majengo</option>
+                    <option value="mtopanga">Mtopanga</option>
+                    <option value="mwakirunge">Mwakirunge</option>
+                    <option value="mwandoni">Mwandoni</option>
+                    <option value="shanzu">Shanzu</option>
+                    <option value="likoni">Likoni</option>
+                    <option value="mtongwe">Mtongwe</option>
+                    <option value="shika-adabu">Shika Adabu</option>
+                    <option value="mombasa-central">Mombasa Central</option>
+                    <option value="tudor">Tudor</option>
+                    <option value="tononoka">Tononoka</option>
+                    <option value="frere-town">Frere Town</option>
+                    <option value="ziwa-la-ngombe">Ziwa la Ng'ombe</option>
+                    <option value="mkomani">Mkomani</option>
+                    <option value="kongowea">Kongowea</option>
+                    <option value="kajiadoni">Kajiadoni</option>
+                    <option value="kadzandani">Kadzandani</option>
+                    <option value="kisauni">Kisauni</option>
+
                 </select>
             </div>
             <div class="form-group">
-                <label for="estate">Estate:</label>
-                <input type="text" id="estate" name="estate">
+                <label for="pollingStation">Polling Station</label>
+                <input type="text" id="pollingStation" name="pollingStation">
             </div>
             <div class="form-group">
-                <label for="plotNumber">Plot Number:</label>
-                <input type="text" id="plotNumber" name="plotNumber">
+                <label for="address">Residential Address</label>
+                <textarea id="address" name="address" placeholder="Enter your current residential address"></textarea>
             </div>
-            <div class="form-group">
-                <label for="connectionType">Connection Type:</label>
-                <select id="connectionType" name="connectionType" required>
-                    <option value="">Select Connection Type</option>
-                    <option value="domestic">Domestic</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="industrial">Industrial</option>
-                </select>
-            </div>
-            <button type="submit" class="submit-btn">Submit Application</button>
+            <button type="submit" class="submit-btn">Register</button>
+
         </form>
     </div>
+    <script>
+        const constituencySelect = document.getElementById('constituency');
+        const wardSelect = document.getElementById('ward');
+
+        const wards = {
+            changamwe: ['Airport', 'Chaani', 'Changamwe', 'Port Reitz'],
+            jomvu: ['Jomvu Kuu', 'Mikindani'],
+            kisauni: ['Bamburi', 'Junda', 'Kadzandani', 'Kisauni', 'Majengo', 'Mtopanga', 'Mwakirunge', 'Mwandoni', 'Shanzu'],
+            likoni: ['Likoni', 'Mtongwe', 'Shika Adabu'],
+            mvita: ['Mombasa Central', 'Tudor', 'Tononoka'],
+            nyali: ['Frere Town', 'Ziwa la Ng\'ombe', 'Mkomani', 'Kongowea', 'Kajiadoni']
+        };
+
+        constituencySelect.addEventListener('change', function() {
+            const selectedConstituency = this.value;
+            wardSelect.innerHTML = '<option value="">Select Ward</option>';
+            if (selectedConstituency && wards[selectedConstituency]) {
+                wards[selectedConstituency].forEach(ward => {
+                    const option = document.createElement('option');
+                    option.value = ward.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = ward;
+                    wardSelect.appendChild(option);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
