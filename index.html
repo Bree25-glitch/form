@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: rgb(11, 24, 11);
+           background: linear-gradient(to right, #021b09, #0f4c29);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -101,6 +101,7 @@
             transition: transform 0.2s ease, background-color 0.2s ease;
             font-size: 16px;
             font-weight: 600;
+            width: 100%;
         }
         .submit-btn:hover {
             background: linear-gradient(0deg, rgba(0,100,0,0.9), rgba(0,100,0,1)),
@@ -108,7 +109,7 @@
             no-repeat center center;
             transform: translateY(-2px);
         }
-        @media screen and (max-width: 50px) {
+        @media screen and (max-width: 768px) {
             .container {
                 margin: 20px auto;
                 padding: 20px;
